@@ -53,7 +53,7 @@ class Application : android.app.Application(), SharedPreferences.OnSharedPrefere
       BuildConfig.ENABLE_DEBUG_FEATURES ||
         prefs.getBoolean(PreferenceKeys.ENABLE_DEBUG_LOGGING, false)
     ) {
-      LogcatLogger.install(AndroidLogcatLogger(DEBUG))
+      AndroidLogcatLogger(DEBUG).install()
       setVmPolicy()
     }
     prefs.registerOnSharedPreferenceChangeListener(this)
